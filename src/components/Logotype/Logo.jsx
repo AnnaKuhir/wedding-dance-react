@@ -3,30 +3,39 @@ import './style.scss';
 import { getHeaderData } from '../../api/HeaderAPI';
 import PropTypes from "prop-types";
 
-class Logo extends React.Component {
-  constructor(props) {
-    super(props);
+// class Logo extends React.Component {
+//   constructor(props) {
+//     super(props);
 
-    this.state = {
-      logo: ''
-    };
-  }
+//     this.state = {
+//       logo: ''
+//     };
+//   }
 
-  componentDidMount() {
-    getHeaderData().then(data => {
-      this.setState({ logo: data.meta.title })
-    })
-  }
+//   // componentDidMount() {
+//   //   getHeaderData().then(data => {
+//   //     this.setState({ logo: data.meta.title })
+//   //   })
+//   // }
 
-  render() {
+
+
+//   render() {
+//     return (
+//       <a href='/' className="header__logo">{this.state.logo}</a>
+//     )
+//   }
+// }
+
+// Logo.propTypes = {
+//   logo: PropTypes.string
+// }
+
+// export default Logo;
+
+const Logo = ({ content }) => {
     return (
-      <a href='/' className="header__logo">{this.state.logo}</a>
+      <a href='/' className="header__logo">{content.meta.title}</a>
     )
-  }
 }
-
-Logo.propTypes = {
-  logo: PropTypes.string
-}
-
 export default Logo;

@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.scss';
 import { getHeaderData } from '../../api/HeaderAPI';
+import PropTypes from "prop-types";
 
 class Links extends React.Component {
   constructor(props) {
@@ -33,6 +34,10 @@ class Links extends React.Component {
       </ul>
     )
   }
+}
+
+Links.propTypes = {
+  content: PropTypes.array
 }
 
 export default Links;

@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.scss';
-import Logo from './components/Logotype/Logo';
-import Links from './components/HeaderLinks/HeaderLinks';
+import Header from './components/Header/Header'
+
 
 function App() {
   return (
     <div className="App">
-     <Logo/>
-     <Links/>
+      <Header/>
     </div>
   );
 }
