@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.scss';
-import Logotype from './logo';
+import Logo from './components/Logotype/Logo';
+import Links from './components/HeaderLinks/HeaderLinks';
 
 function App() {
   return (
     <div className="App">
-     <Logotype/>
+     <Logo/>
+     <Links/>
     </div>
   );
 }

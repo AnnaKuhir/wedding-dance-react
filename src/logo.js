@@ -1,24 +1,24 @@
-import React from 'react';
-import { getApiData } from './service';
+// import React from 'react';
+// import { getApiData } from './service';
 
-class Logotype extends React.Component {
-  constructor(props) {
-    super(props);
+// class Logotype extends React.Component {
+//   constructor(props) {
+//     super(props);
 
-    this.state = {
-      logo: ''
-    };
-  }
+//     this.state = {
+//       logo: ''
+//     };
+//   }
 
-  componentDidMount() {
-    getApiData().then(data => {
-      this.setState({logo: data.meta.title})
-    });
-  }
+//   componentDidMount() {
+//     getApiData().then(data => {
+//       this.setState({logo: data.meta.title})
+//     });
+//   }
 
-  render() {
-    return <h1>{this.state.logo}</h1>;
-  }
-}
+//   render() {
+//     return <h1>{this.state.logo}</h1>;
+//   }
+// }
 
-export default Logotype;
+// export default Logotype;
