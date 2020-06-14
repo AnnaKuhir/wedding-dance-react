@@ -1,61 +1,56 @@
-import React from 'react';
-import './style.scss';
-import { getHeaderData } from '../../api/HeaderAPI';
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react';
 import Logo from '../Logotype/Logo';
-import HeaderLinks from '../HeaderLinks/HeaderLinks'
+import { getHeaderData } from '../../api/HeaderAPI'
+import Link from '../HeaderLinks/HeaderLinks';
 import Button from '../Button/Button';
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
+const Header = () => {
 
-    // this.state = {
-    //   buttonTitle: '',
-    //   url: ''
-    // };
-    this.state = {
-      content: {}
+  const [content, setContent] = useState({
+    meta: {},
+    action: {},
+    content: []
+  });
+
+  useEffect(() => {
+    getContent()
+  }, []);
+
+  const getContent = async () => {
+    getHeaderData().then(data => setContent(data))
+  }
+
+  const onClick = () => {
+    debugger;
+    if(content.action.url){
+      window.location.assign(content.action.url)
     }
   }
 
-  // componentDidMount() {
-  //   getHeaderData().then(data => {
-  //     this.setState({ buttonTitle: data.action.title, url: data.action.url })
-  //   })
-  // }
-
-  componentDidMount() {
-    debugger
-    this.getContent();
-  }
-
-  getContent = async () => {
-    fetch('https://us-central1-cms-edu-2020-api.cloudfunctions.net/app/api/v1/section/navigation')
-      .then((data) => data.json())
-      .then((res) => {
-        debugger
-        this.setState({ content: res });
-        console.log(this.state.content);
-      })
-  }
-
-  onClick = () => {
-    window.location.assign(this.state.url);
-  }
-
-  render() {
-    debugger
-    return (
-      <header className="header">
-        <div className="container">
-          {/* <Logo>{this.state.content}</Logo> */}
-          {/*<HeaderLinks />
-          <Button className="btn btn-active header__btn" onClick={this.onClick()}>{this.state.buttonTitle}</Button> */}
+  return (
+    <header className="header">
+      <div className="container">
+      <div className="header__body">
+        <Logo logo={content.meta.title} />
+        <div className="header__navigation">
+        <ul className="header__list">
+          {
+            content.content.map(item => {
+              return <Link
+                key={item._id}
+                className = "header__link"
+                url={item.url}
+                title={item.title}
+              />
+            })
+          }
+        </ul>
+        <Button className="btn btn-active header__btn" onClick={onClick} children={content.action.title}/>
         </div>
-      </header>
-    )
-  }
+        </div>
+      </div>
+    </header>
+  )
 }
 
 export default Header;
