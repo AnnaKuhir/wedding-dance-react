@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Logo from '../Logotype/Logo';
-import { getHeaderData } from '../../api/HeaderAPI'
+import { getHeaderData } from '../../api/HeaderAPI';
 import Link from '../HeaderLinks/HeaderLinks';
 import Button from '../Button/Button';
 import './style.scss';
