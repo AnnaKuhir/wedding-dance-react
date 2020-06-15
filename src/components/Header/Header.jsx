@@ -3,6 +3,7 @@ import Logo from '../Logotype/Logo';
 import { getHeaderData } from '../../api/HeaderAPI'
 import Link from '../HeaderLinks/HeaderLinks';
 import Button from '../Button/Button';
+import './style.scss';
 
 const Header = () => {
 
@@ -21,7 +22,6 @@ const Header = () => {
   }
 
   const onClick = () => {
-    debugger;
     if(content.action.url){
       window.location.assign(content.action.url)
     }
@@ -33,6 +33,7 @@ const Header = () => {
       <div className="header__body">
         <Logo logo={content.meta.title} />
         <div className="header__navigation">
+        <nav className="header__menu">
         <ul className="header__list">
           {
             content.content.map(item => {
@@ -45,7 +46,12 @@ const Header = () => {
             })
           }
         </ul>
-        <Button className="btn btn-active header__btn" onClick={onClick} children={content.action.title}/>
+        </nav>
+        <Button 
+        className="btn btn-active header__btn" 
+        onClick={onClick} 
+        children={content.action.title}
+        />
         </div>
         </div>
       </div>

@@ -1,0 +1,86 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  .header__body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 72px;
+    align-items: center;
+    background: #fff;
+  }
+
+  .header__navigation {
+    display: flex;
+    align-items: center;
+    .header__btn {
+      border: 2px solid #000;
+      color: #000;
+      box-sizing: border-box;
+      padding: 6px 33px;
+      margin-left: 23px;
+
+      &:hover {
+        color: #fff;
+        background-color: #000;
+        transition: 0.7s;
+      }
+    }
+  }
+
+  .header__menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header__list {
+    display: flex;
+    position: relative;
+    z-index: 2;
+  
+    li {
+      list-style: none;
+      display: inline-block;
+      vertical-align: top;
+      line-height: 1.5rem;
+      margin: 0 12px;
+    }
+  }
+  
+  .header__link {
+    display: inline-block;
+    vertical-align: top;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.5rem;
+    font-family: Roboto;
+    font-weight: normal;
+    font-style: normal;
+    position: relative;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  
+    &::after {
+      background-color: #000;
+      display: block;
+      content: "";
+      height: 1px;
+      width: 0%;
+      left: 50%;
+      position: absolute;
+      transition: width 0.3s ease-in-out;
+      transform: translateX(-50%);
+    }
+  
+    &:hover::after,
+    &:focus::after {
+      width: 100%;
+    }
+  }
+}

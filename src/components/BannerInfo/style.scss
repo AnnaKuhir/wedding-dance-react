@@ -1,0 +1,36 @@
+.banner__presentation{
+  max-width: 428px;
+  min-height: 677px;
+  padding: 73px 77px 80px 0;
+  position: absolute;
+  background: #fff;
+
+  .banner__text {
+
+    .banner__title {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 72px;
+      color: #000;
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+  
+    span {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+    }
+  
+    .banner__info {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      margin: 40px 0;
+      line-height: 1.5;
+    }
+  }
+  
+}

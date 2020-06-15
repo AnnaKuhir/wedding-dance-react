@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.scss';
-import Header from './components/Header/Header'
+import Header from './components/Header/Header';
+import Banner from './components/Banner/Banner'
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="wrapper">
       <Header/>
+      <Banner/>
     </div>
   );
 }
