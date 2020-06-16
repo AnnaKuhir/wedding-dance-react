@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.scss';
 
-const Logo = ({ logo }) => {
+const Logo = ({ logo, className }) => {
     return (
-      <a href='/' className="header__logo">{logo}</a>
+      <a href='/' className={className}>{logo}</a>
     )
 }
 export default Logo;

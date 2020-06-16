@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.scss';
-import Header from './components/Header/Header';
-import Banner from './components/Banner/Banner';
-import ServicesSection from './components/ServicesSection/ServicesSection';
-import OffersSection from './components/OffersSection/OffersSection';
+import Header from './components/Header';
+import Banner from './components/Banner';
+import ServicesSection from './components/ServicesSection';
+import OffersSection from './components/OffersSection';
+import Footer from './components/Footer'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Banner/>
       <ServicesSection/>
       <OffersSection/>
+      <Footer/>
     </div>
   );
 }
