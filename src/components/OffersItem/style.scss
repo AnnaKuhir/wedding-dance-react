@@ -1,0 +1,23 @@
+.offers__item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  width: 19vw;
+  margin: 10px;
+}
+
+.offers__ico {
+  font-size: 60px;
+  color: #ff699f;
+  margin-bottom: 14px;
+}
+
+span {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.5rem;
+  max-width: 70%;
+}

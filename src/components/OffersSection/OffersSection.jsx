@@ -31,6 +31,7 @@ const OffersSection = () => {
           {
             content.content.map(item =>{
               return <OffersItem
+              key = {item._id}
               url = {item.url}
               title = {item.title}
               classNameImage = "offers__ico"
