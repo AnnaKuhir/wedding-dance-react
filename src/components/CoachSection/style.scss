@@ -1,0 +1,28 @@
+.coaches {
+  position: relative;
+
+  .coaches__title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+
+  .coaches__description {
+    max-width: 668px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 48px;
+  }
+
+  .coaches__slider {
+    display: flex;
+    margin: 0 -12px 0 0;
+    min-width: 0;
+    position: relative;
+  }
+}

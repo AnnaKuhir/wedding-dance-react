@@ -5,6 +5,7 @@ import Banner from './components/Banner';
 import ServicesSection from './components/ServicesSection';
 import OffersSection from './components/OffersSection';
 import Footer from './components/Footer'
+import CoachSection from './components/CoachSection/CoachSection';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Banner/>
       <ServicesSection/>
       <OffersSection/>
+      <CoachSection/>
       <Footer/>
     </div>
   );
