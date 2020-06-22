@@ -1,4 +1,4 @@
-import React from 'react';
+
 import axios from 'axios';
 
 export function getUser(formData) {
@@ -11,4 +11,12 @@ export function getUser(formData) {
           'application/json; charset=utf-8'
       },
     })
+}
+
+export function isTokenExist(){
+  const token = localStorage.getItem('access_token');
+  if (token) {
+    return true;
+  }
+  return false;
 }
