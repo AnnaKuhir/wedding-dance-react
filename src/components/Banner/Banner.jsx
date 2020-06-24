@@ -51,8 +51,9 @@ const Banner = () => {
           <Button
             className="btn btn-active banner__btn"
             onClick={onClick}
-            children={content.action.title}
-          />
+          >
+            {content.action.title}
+          </Button>
         </div>
        {
          getImageTemplate()

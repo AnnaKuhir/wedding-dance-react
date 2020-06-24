@@ -37,8 +37,9 @@ const CoachCard = ({ classNameWrapper, classNameInfo, classNameNumber, className
         <Button
           onClick={onClick}
           className="coaches__button"
-          children="Let’s start"
-        />
+        >
+          Let’s start
+        </Button>
       </div>
     </div>
   )

@@ -3,11 +3,8 @@ import { ChangeData } from '../../api/ChangeData';
 
 const EditModal = ({ setShow, content }) => {
 
-  // debugger;
-
   const [title, setTitle] = useState('');
   const [items, setItems] = useState([]);
-  // const [isDataSaved, changeDataStatus] = useState(false);
 
   useEffect(() => {
     if (content) {
@@ -15,7 +12,6 @@ const EditModal = ({ setShow, content }) => {
       setItems(content.content)
     }
   }, [content]);
-
 
   const hideModal = () => {
     setShow(false)
@@ -28,14 +24,11 @@ const EditModal = ({ setShow, content }) => {
       meta: {
         title,
       },
-      // content: [{ item }]
+      items
     };
-
     ChangeData(await changedData);
-    setShow(false)
-    // changeDataStatus(true);
+    setShow(false);
   }
-
 
   return (
     <div className="edit-container">
@@ -47,25 +40,27 @@ const EditModal = ({ setShow, content }) => {
             name="logo"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-          ></input>
-
+          />
           {
-            items.map(item => {
+            items.map((item, index) => {
               return <input className="edit-control"
                 type="text" key={item._id}
-                value={item.title}
+                value={item.title} data-id={index}
                 onChange={
                   (e) => {
-                    setItems(e.target.value)
+                    const index = +e.target.dataset.id;
+                    if (index !== -1) {
+                      let newItemsArr = [...items];
+                      newItemsArr[index].title = e.target.value;
+                      setItems(newItemsArr);
+                    }
+                    return;
                   }
                 }
-              ></input>
+              />
             })
           }
-
-
         </div>
-
         <div className="btns-container">
           <button className="btn btn-submit" type="button" onClick={(e) => submitEdit(e)}>Save</button>
           <button className="btn btn-cancel" type="button" onClick={hideModal}>Cancel</button>
@@ -74,6 +69,5 @@ const EditModal = ({ setShow, content }) => {
     </div>
   )
 }
-
 
 export default EditModal
