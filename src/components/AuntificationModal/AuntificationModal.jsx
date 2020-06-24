@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getUser } from '../../api/GetUser';
+import './style.scss';
 
 const AuntificationModal = ({ setShow }) => {
 
@@ -30,7 +31,6 @@ const AuntificationModal = ({ setShow }) => {
     getUser(formData).then(res => {
       localStorage.setItem("access_token", res.data.access_token)
     })
-    console.log(formData);
     setShow(false);
   }
 

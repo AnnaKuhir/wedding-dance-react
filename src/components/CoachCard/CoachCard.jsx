@@ -2,19 +2,17 @@ import React from 'react';
 import './style.scss';
 import Button from '../Button'
 
-const CoachCard = ({ classNameWrapper, classNameInfo, classNameNumber, classNameSubtitle, classNameList, classNamePoint, classNamePointSpan, name, direction, workExperience, teachExperience, styles, classNameImage, alt, url }) => {
+const CoachCard = ({ classNameWrapper, classNameInfo, classNameNumber, classNameSubtitle, classNameList, classNamePoint, classNamePointSpan, name, direction, workExperience, teachExperience, styles, classNameImage, alt, url, id }) => {
 
   const onClick = () => {
     window.location.assign(url)
   }
 
   const getImageTemplate = () => {
-    if (name) {
-      const imageName = name
-        .replace(/[ ,.]/g, '-')
-        .toLocaleLowerCase();
+    if (id) {
+      const imageName = `${id}.jpg`;
       return (
-        <img src={require(`../../assets/images/${imageName}.jpg`)} className={classNameImage} alt={alt} />
+        <img src={require(`../../assets/images/${imageName}`)} className={classNameImage} alt={alt} />
       )
     }
   }

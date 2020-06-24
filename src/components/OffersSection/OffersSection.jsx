@@ -37,6 +37,7 @@ const OffersSection = () => {
               classNameImage = "offers__ico"
               classNameWrapper = "offers__item"
               alt = "Our offers"
+              id = {item._id}
               />
             })
           }

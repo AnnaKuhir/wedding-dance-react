@@ -5,21 +5,20 @@ import Link from '../HeaderLinks/HeaderLinks';
 import Button from '../Button/Button';
 import './style.scss';
 import Modal from '../Modal/Modal';
-import { isTokenExist } from '../../api/GetUser';
 import AuntificationModal from '../AuntificationModal/AuntificationModal';
+import EditModal from '../EditModal/Modal';
 
 
 
-const Header = () => {
+const Header = ({ isUserLogined }) => {
   const [show, setShow] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
 
   const [content, setContent] = useState({
     meta: {},
     action: {},
     content: []
   });
-
-  const [userLogined, setUserLogined] = useState(false);
 
   useEffect(() => {
     getContent()
@@ -33,15 +32,8 @@ const Header = () => {
     setShow(true)
   }
 
-  const editBtnRender = () => {
-    if (isTokenExist()) {
-      setUserLogined(true);
-    }
-  }
-
-
-  const onEditBtnClick = () => {
-    return
+  const showModalEditing = () => {
+    setShowEditModal(true)
   }
 
   return (
@@ -70,9 +62,9 @@ const Header = () => {
             <Button
               className="btn btn-active header__btn"
               onClick={showModal}
-              children={content.action.title}
-            />
-            {/* {setUserLogined } */}
+            >
+              {content.action.title}
+            </Button>
             <Modal
               show={show}
             >
@@ -82,6 +74,21 @@ const Header = () => {
             </Modal>
           </div>
         </div>
+        {isUserLogined && (
+          <Button
+            className="btn edit-btn"
+            onClick={showModalEditing}
+          >Edit</Button>
+        )}
+        <Modal
+          show={showEditModal}
+        >
+          <EditModal
+            setShow={setShowEditModal}
+            content={content}
+          />
+
+        </Modal>
       </div>
     </header>
   )

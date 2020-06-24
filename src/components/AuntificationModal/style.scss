@@ -1,0 +1,79 @@
+.modal-main {
+  position: fixed;
+  background: white;
+  width: 80%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  padding: 20px;
+
+  &_title {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  &_controlsContainer {
+    margin-bottom: 30px;
+  }
+
+  &_control {
+    padding: 10px 0;
+  }
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1.5px solid #000;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.control-label.required:after {
+  color: red;
+  content: "\274B";
+  font-size: 10px;
+  position: absolute;
+}
+
+
+.btn-submit {
+border: 1.5px solid rgb(103, 212, 114);
+background: rgb(103, 212, 114);
+
+&:active {
+  border: 1.5px solid rgb(75, 138, 81);
+  background: rgb(75, 138, 81);
+}
+}
+
+.btn-submit:disabled {
+cursor: not-allowed;
+opacity: 0.5;
+}
+
+.btn-cancel {
+border: 1.5px solid rgb(207, 49, 49);
+background: rgb(207, 49, 49);
+
+&:active {
+  border: 1.5px solid rgb(156, 37, 37);
+  background: rgb(156, 37, 37);
+}
+}
+
+.display-block {
+display: block;
+}
+
+.display-none {
+display: none;
+}

@@ -39,6 +39,7 @@ const ServicesSection = () => {
                 alt="Dance"
                 title={item.title}
                 url={item.url}
+                id = {item._id}
                 
               />
             })

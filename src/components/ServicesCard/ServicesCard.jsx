@@ -1,22 +1,19 @@
 import React from 'react';
-import './style.scss'
+import './style.scss';
 
-const ServicesCard = ({ classNameWrapper, url, classNameImage, alt, classNameInfo, classNameSubtitle, title }) => {
+const ServicesCard = ({ classNameWrapper, url, classNameImage, alt, classNameInfo, classNameSubtitle, title, id }) => {
   const onClick = () => {
     window.location.assign(url)
   }
-
   const getImageTemplate = () => {
-    if (title) {
-      const imageName = title
-        .replace(/[ ,.]/g, '-')
-        .toLocaleLowerCase();
+    if (id) {
+      const imageName = `${id}.jpg`;
+
       return (
-        <img src={require(`../../assets/images/${imageName}.jpg`)} className={classNameImage} alt={alt} />
+        <img src={require(`../../assets/images/${imageName}`)} className={classNameImage} alt={alt} />
       )
     }
   }
-
 
   return (
     <div className={classNameWrapper} onClick={onClick}>

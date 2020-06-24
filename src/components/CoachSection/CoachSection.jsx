@@ -47,6 +47,7 @@ const CoachSection = () => {
              classNameImage = "coaches__image"
              alt = "Our coaches"
              url = {item.url}
+             id = {item._id}
              />
            })
          }

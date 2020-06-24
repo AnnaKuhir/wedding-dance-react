@@ -1,18 +1,16 @@
 import React from 'react';
 import './style.scss';
 
-const OffersItem = ({url, title, classNameImage, classNameWrapper, alt}) => {
+const OffersItem = ({ url, title, classNameImage, classNameWrapper, alt, id }) => {
   const onClick = () => {
     window.location.assign(url)
   }
 
   const getIconTemplate = () => {
-    if (title) {
-      const imageName = title
-        .replace(/[ ,.]/g, '-')
-        .toLocaleLowerCase();
+    if (id) {
+      const imageName = `${id}.svg`;
       return (
-        <img src={require(`../../assets/images/${imageName}.svg`)} className={classNameImage} alt={alt} />
+        <img src={require(`../../assets/images/${imageName}`)} alt={alt} />
       )
     }
   }
