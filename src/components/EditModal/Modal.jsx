@@ -1,35 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { ChangeData } from '../../api/ChangeData';
+import React from 'react';
 import './style.scss'
 
-const EditModal = ({ setShow, content }) => {
-
-  const [title, setTitle] = useState('');
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    if (content) {
-      setTitle(content.meta.title)
-      setItems(content.content)
-    }
-  }, [content]);
-
-  const hideModal = () => {
-    setShow(false)
-  }
-
-  const submitEdit = async (e) => {
-    e.preventDefault();
-    const changedData = {
-      ...content,
-      meta: {
-        title,
-      },
-      items
-    };
-    ChangeData(await changedData);
-    setShow(false);
-  }
+const EditModal = ({title, setTitle, items, setItems, submitEdit, hideModal}) => {
 
   return (
     <div className="edit-container">

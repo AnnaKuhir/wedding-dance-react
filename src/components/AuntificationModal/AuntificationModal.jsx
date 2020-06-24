@@ -1,37 +1,7 @@
-import React, { useState } from 'react';
-import { getUser } from '../../api/GetUser';
+import React from 'react';
 import './style.scss';
 
-const AuntificationModal = ({ setShow }) => {
-
-  const emailVal = React.useRef();
-  const passVal = React.useRef();
-
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  })
-
-  const hideModal = () => {
-    setShow(false)
-  }
-
-  const handleChange = (event) => {
-    setFormData({
-      ...formData, [event.target.name]: event.target.value
-    })
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    emailVal.current.value = "";
-    passVal.current.value = "";
-    getUser(formData).then(res => {
-      localStorage.setItem("access_token", res.data.access_token)
-    })
-    setShow(false);
-  }
-
+const AuntificationModal = ({ handleChange, emailVal, passVal, handleSubmit, hideModal }) => {
   return (
     <>
       <h1 className="modal-main_title">Authorization</h1>
