@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getBannerData } from '../../api/BannerAPI';
-import  BannerInfo from '../BannerInfo/BannerInfo'
-import Button from '../Button/Button';
+import BannerInfo from '../BannerInfo/BannerInfo'
+import Button from '../Button';
 import './style.scss';
 
 const Banner = () => {
@@ -24,13 +24,13 @@ const Banner = () => {
     }
   }
 
-  const getImageTemplate = () =>{
-    if(content.meta.heroImage){
-      return(
+  const getImageTemplate = () => {
+    if (content.meta.heroImage) {
+      return (
         <div className="banner__presentationImage">
-        <div className="banner__image">
-          <img src={ require(`../../assets/images${content.meta.heroImage}`)} alt="Heroes"/>
-        </div>
+          <div className="banner__image">
+            <img src={require(`../../assets/images${content.meta.heroImage}`)} alt="Heroes" />
+          </div>
         </div>
       )
     }
@@ -55,9 +55,9 @@ const Banner = () => {
             {content.action.title}
           </Button>
         </div>
-       {
-         getImageTemplate()
-       }
+        {
+          getImageTemplate()
+        }
       </section>
     </div>
   )

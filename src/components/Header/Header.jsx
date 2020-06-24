@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Logo from '../Logotype/Logo';
+import Logo from '../Logotype';
 import { getHeaderData } from '../../api/HeaderAPI';
-import Link from '../HeaderLinks/HeaderLinks';
-import Button from '../Button/Button';
+import Link from '../HeaderLinks';
+import Button from '../Button';
 import './style.scss';
-import Modal from '../Modal/Modal';
-import AuntificationModal from '../AuntificationModal/AuntificationModal';
-import EditModal from '../EditModal/Modal';
-
-
+import Modal from '../Modal';
+import AuntificationModal from '../AuntificationModal';
+import EditModal from '../EditModal';
 
 const Header = ({ isUserLogined }) => {
   const [show, setShow] = useState(false);
@@ -87,7 +85,6 @@ const Header = ({ isUserLogined }) => {
             setShow={setShowEditModal}
             content={content}
           />
-
         </Modal>
       </div>
     </header>

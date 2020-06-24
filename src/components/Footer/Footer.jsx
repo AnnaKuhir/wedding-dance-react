@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getHeaderData } from '../../api/HeaderAPI';
-import Logo from '../Logotype/Logo';
+import Logo from '../Logotype';
 import './style.scss';
 
 const Footer = () => {

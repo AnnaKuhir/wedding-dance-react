@@ -5,16 +5,14 @@ import Banner from './components/Banner';
 import ServicesSection from './components/ServicesSection';
 import OffersSection from './components/OffersSection';
 import Footer from './components/Footer'
-import CoachSection from './components/CoachSection/CoachSection';
+import CoachSection from './components/CoachSection';
 import { isTokenExist } from './api/GetUser';
 
-
 const App = () => {
-  // const [userLogined, setUserLogined] = useState(false);
 
   const [isLogin, setIsLogin] = useState(false)
 
-  const  editBtnRender = () => {
+  const editBtnRender = () => {
     let state = false;
     if (isTokenExist()) {
       state = true

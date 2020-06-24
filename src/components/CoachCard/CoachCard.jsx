@@ -22,16 +22,12 @@ const CoachCard = ({ classNameWrapper, classNameInfo, classNameNumber, className
       {
         getImageTemplate()
       }
-
       <div className={classNameInfo}>
-        {/* <span className={classNameNumber}>{itemIndex}</span> */}
-        <h3 className={classNameSubtitle}> {name} </h3>
+        <h3 className={classNameSubtitle}>{name}</h3>
         <span>{direction}</span>
         <ul className={classNameList}>
-          <li className={classNamePoint}><span className={classNamePointSpan}>Work experience</span> {workExperience} years
-      </li>
-          <li className={classNamePoint}><span className={classNamePointSpan}>Teacher for</span> {teachExperience} years
-      </li>
+          <li className={classNamePoint}><span className={classNamePointSpan}>Work experience</span> {workExperience} years. </li>
+          <li className={classNamePoint}><span className={classNamePointSpan}>Teacher for</span> {teachExperience} years. </li>
           <li className={classNamePoint}><span className={classNamePointSpan}>Style</span> {styles} </li>
         </ul>
         <Button

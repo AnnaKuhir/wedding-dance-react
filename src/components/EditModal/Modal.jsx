@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChangeData } from '../../api/ChangeData';
+import './style.scss'
 
 const EditModal = ({ setShow, content }) => {
 

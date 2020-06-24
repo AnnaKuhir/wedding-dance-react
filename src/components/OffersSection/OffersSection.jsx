@@ -23,25 +23,23 @@ const OffersSection = () => {
         <h2 className="offers__title">
           {content.meta.title}
         </h2>
-
         <p className="offers__description">
           {content.meta.description}
         </p>
         <div className="offers__main">
           {
-            content.content.map(item =>{
+            content.content.map(item => {
               return <OffersItem
-              key = {item._id}
-              url = {item.url}
-              title = {item.title}
-              classNameImage = "offers__ico"
-              classNameWrapper = "offers__item"
-              alt = "Our offers"
-              id = {item._id}
+                key={item._id}
+                url={item.url}
+                title={item.title}
+                classNameImage="offers__ico"
+                classNameWrapper="offers__item"
+                alt="Our offers"
+                id={item._id}
               />
             })
           }
-
         </div>
       </section>
     </div >

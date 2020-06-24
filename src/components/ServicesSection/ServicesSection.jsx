@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getServicesData } from '../../api/ServicesAPI'
-import ServicesCard from '../ServicesCard/ServicesCard';
+import ServicesCard from '../ServicesCard';
 import './style.scss';
 
 const ServicesSection = () => {
@@ -16,7 +16,6 @@ const ServicesSection = () => {
   const getContent = async () => {
     getServicesData().then(data => setContent(data))
   }
-
 
   return (
     <div className="container">
@@ -39,8 +38,7 @@ const ServicesSection = () => {
                 alt="Dance"
                 title={item.title}
                 url={item.url}
-                id = {item._id}
-                
+                id={item._id}
               />
             })
           }
