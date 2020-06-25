@@ -10,7 +10,7 @@ import EditModal from '../EditModal';
 import { ChangeData } from '../../api/ChangeData';
 import { getUser } from '../../api/GetUser';
 
-const Header = ({ isUserLogined }) => {
+const Header = ({ isUserLogined, showNotification }) => {
   const emailVal = React.useRef();
   const passVal = React.useRef();
 
@@ -58,6 +58,7 @@ const Header = ({ isUserLogined }) => {
     };
     ChangeData(changedData);
     setShowEditModal(false);
+    showNotification()
   }
 
   const getContent = async () => {
