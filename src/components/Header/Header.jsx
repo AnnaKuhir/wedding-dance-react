@@ -43,16 +43,20 @@ const Header = ({ isUserLogined }) => {
     setShow(false)
   }
 
+  const hideEditModal = () => {
+    setShowEditModal(false)
+  }
+
   const submitEdit = async (e) => {
     e.preventDefault();
     const changedData = {
       ...content,
       meta: {
-        title,
+        title
       },
       items
     };
-    ChangeData(await changedData);
+    ChangeData(changedData);
     setShowEditModal(false);
   }
 
@@ -137,7 +141,7 @@ const Header = ({ isUserLogined }) => {
         >
           <EditModal
             content={content}
-            hideModal={hideModal}
+            hideModal={hideEditModal}
             submitEdit={submitEdit}
             title={title}
             setTitle={setTitle}

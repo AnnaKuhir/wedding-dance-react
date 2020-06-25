@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss'
 
-const EditModal = ({title, setTitle, items, setItems, submitEdit, hideModal}) => {
+const EditModal = ({ title, setTitle, items, setItems, submitEdit, hideModal }) => {
 
   return (
     <div className="edit-container">
@@ -12,7 +12,10 @@ const EditModal = ({title, setTitle, items, setItems, submitEdit, hideModal}) =>
             type="text"
             name="logo"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => {
+              const newItem = e.target.value;
+              setTitle(newItem);
+            }}
           />
           {
             items.map((item, index) => {

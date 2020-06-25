@@ -1,18 +1,21 @@
 import React from 'react';
 import './style.scss';
+import serviceCardImg from '../../assets/images/serviceImg.jpg';
 
 const ServicesCard = ({ classNameWrapper, url, classNameImage, alt, classNameInfo, classNameSubtitle, title, id }) => {
   const onClick = () => {
     window.location.assign(url)
   }
   const getImageTemplate = () => {
-    if (id) {
-      const imageName = `${id}.jpg`;
-
-      return (
-        <img src={require(`../../assets/images/${imageName}`)} className={classNameImage} alt={alt} />
-      )
-    }
+    // if (id) {
+    //   const imageName = `${id}.jpg`;
+    //   return (
+    //     <img src={require(`../../assets/images/${imageName}`)} className={classNameImage} alt={alt} />
+    //   )
+    // }
+    return(
+      <img src={serviceCardImg} className={classNameImage} alt={alt} />
+    )
   }
 
   return (

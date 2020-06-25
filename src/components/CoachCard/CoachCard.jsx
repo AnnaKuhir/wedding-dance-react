@@ -1,20 +1,24 @@
 import React from 'react';
 import './style.scss';
-import Button from '../Button'
+import Button from '../Button';
+import coahCardImg from '../../assets/images/ann-walker.jpg'
 
-const CoachCard = ({ classNameWrapper, classNameInfo, classNameNumber, classNameSubtitle, classNameList, classNamePoint, classNamePointSpan, name, direction, workExperience, teachExperience, styles, classNameImage, alt, url, id }) => {
+const CoachCard = ({ classNameWrapper, classNameInfo, classNameSubtitle, classNameList, classNamePoint, classNamePointSpan, name, direction, workExperience, teachExperience, styles, classNameImage, alt, url, id }) => {
 
   const onClick = () => {
     window.location.assign(url)
   }
 
   const getImageTemplate = () => {
-    if (id) {
-      const imageName = `${id}.jpg`;
-      return (
-        <img src={require(`../../assets/images/${imageName}`)} className={classNameImage} alt={alt} />
-      )
-    }
+    // if (id) {
+    //   const imageName = `${id}.jpg`;
+    //   return (
+    //     <img src={require(`../../assets/images/${imageName}`)} className={classNameImage} alt={alt} />
+    //   )
+    // }
+    return (
+      <img src={coahCardImg} className={classNameImage} alt={alt} />
+    )
   }
 
   return (

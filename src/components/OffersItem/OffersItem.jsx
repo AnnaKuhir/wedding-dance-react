@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.scss';
+import offerItemImg from '../../assets/images/offerIco.svg'
 
 const OffersItem = ({ url, title, classNameImage, classNameWrapper, alt, id }) => {
   const onClick = () => {
@@ -7,12 +8,15 @@ const OffersItem = ({ url, title, classNameImage, classNameWrapper, alt, id }) =
   }
 
   const getIconTemplate = () => {
-    if (id) {
-      const imageName = `${id}.svg`;
-      return (
-        <img src={require(`../../assets/images/${imageName}`)} alt={alt} />
-      )
-    }
+    // if (id) {
+    //   const imageName = `${id}.svg`;
+    //   return (
+    //     <img src={require(`../../assets/images/${imageName}`)} alt={alt} />
+    //   )
+    // }
+    return (
+      <img src={offerItemImg} alt={alt} />
+    )
   }
 
   return (
