@@ -3,6 +3,7 @@ import { getBannerData } from '../../api/BannerAPI';
 import BannerInfo from '../BannerInfo/BannerInfo'
 import Button from '../Button';
 import './style.scss';
+import heroImg from '../../assets/images/hero.jpg'
 
 const Banner = () => {
   const [content, setContent] = useState({
@@ -29,7 +30,7 @@ const Banner = () => {
       return (
         <div className="banner__presentationImage">
           <div className="banner__image">
-            <img src={require(`../../assets/images${content.meta.heroImage}`)} alt="Heroes" />
+            <img src={heroImg} alt="Heroes" />
           </div>
         </div>
       )
